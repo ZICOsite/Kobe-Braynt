@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Phudu', cursive;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.title {
+    font-size: 3vw;
+    text-align: center;
+}
+
+/* nav */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    box-shadow: 0 0 15px orange;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav__list {
+    display: flex;
+    gap: 30px;
+}
+
+.nav__link {
+    color: #fff;
+    font-size: 20px;
+}
+
+.nav__logo {
+    animation: rotate 10s linear infinite alternate;
+}
+
+.nav__logo img {
+    max-height: 60px;
+    box-shadow: 0 0 15px orange;
+    border-radius: 50%;
+    animation: shadowBall 1s linear infinite alternate;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shadowBall {
+    0% {
+        box-shadow: 0 0 15px orange;
+    }
+    100% {
+        box-shadow: 0 0 15px transparent;
+    }
+}
+
+/* nav */
+
+/* header */
+
+.header {
+    min-height: 100vh;
+    display: flex;
+}
+
+.header__content {
+    flex-grow: 1;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(180deg, orange 50%, #fff 70%);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.header__content-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+    z-index: -1;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: 1s;
+    filter: blur(10px);
+}
+
+.header__content-banner.active {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+}
+
+.header__content-title, .header__content-name {
+    font-size: 6vw;
+    color: #000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: orange;
+    text-align: center;
+    position: absolute;
+}
+
+.header__content-title {
+    filter: blur(0);
+    opacity: 1;
+    transition: 1s;
+}
+
+.header__content-title.active {
+    filter: blur(0);
+    opacity: 0;
+}
+
+.header__content-name {
+    filter: blur(10px);
+    opacity: 0;
+    transition: 1s;
+}
+
+.header__content-name.active {
+    filter: blur(0);
+    opacity: 1;
+}
+
+/* header */
+
+/* about */
+
+.about {
+    padding: 100px 0;
+    background: radial-gradient(circle, #fff 20%, orange 70%);
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: orange;
+    filter: blur(10px);
+    box-shadow: 0 -5px 15px orange;
+    z-index: 999;
+}
+
+.about .container {
+    display: grid;
+    gap: 30px;
+}
+
+.about__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about__content:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.about__txt {
+    max-width: 600px;
+    width: 100%;
+    font-size: 1.3vw;
+    text-align: justify;
+}
+
+/* about */
+
+/* achievements */
+
+.achievements {
+    padding: 100px 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.achievements::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.achievements__banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.achievements .container {
+    position: relative;
+    z-index: 10;
+}
+
+.achievements__title {
+    color: #000;
+    margin-bottom: 30px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: orange;
+    text-shadow: 0 0 10px orange;
+}
+
+.achievements__txt {
+    font-size: 1.8vw;
+    color: #fff;
+    text-align: justify;
+}
+
+/* achievements */
